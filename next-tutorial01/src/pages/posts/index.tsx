@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 
 export default function index({posts}) {
@@ -6,7 +7,9 @@ export default function index({posts}) {
       <h1>POST一覧</h1>
       <ul>
         {posts.map((post) => {
-          return <li key={post.id}>{post.title}</li>;
+          return <li key={post.id}>
+            <Link href={`/posts/${post.id}`}>{post.title}</Link>
+          </li>;
         })}
       </ul>
     </div>
