@@ -7,7 +7,7 @@ export default function Home() {
     <Head>
       <title>トップページ</title>
       <meta name="description" content="" />
-      <meta property="og:title" content="トップページ" />
+      <meta property="og:title" content="" />
       <meta property="og:description" content="これはトップページ" />
     </Head>
       <ul>
