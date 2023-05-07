@@ -6,7 +6,7 @@ export default function Home() {
     <div>
     <Head>
       <title>トップページ</title>
-      <meta name="description" content="これはトップページです" />
+      <meta name="description" content="" />
       <meta property="og:title" content="トップページ" />
       <meta property="og:description" content="これはトップページ" />
     </Head>
