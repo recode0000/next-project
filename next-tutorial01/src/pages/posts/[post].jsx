@@ -9,7 +9,7 @@ export default function post({ post }) {
   );
 }
 
-export async function getServerSideProps({ params }) {
+export async function getStaticProps({ params }) {
   const id = params.post;
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
   const post = await res.json();
@@ -19,4 +19,14 @@ export async function getServerSideProps({ params }) {
     };
   }
   return { props: { post } };
+}
+
+export async function getStaticPaths() {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+  const posts = await res.json();
+  const paths = posts.map((post) => `/posts/${post.id}`);
+  return {
+    paths,
+    fallback: false,
+  };
 }
